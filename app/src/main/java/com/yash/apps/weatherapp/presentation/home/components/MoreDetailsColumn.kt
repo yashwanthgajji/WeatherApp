@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -23,6 +24,7 @@ fun MoreDetailsColumn(modifier: Modifier = Modifier, label: String, value: Strin
         Text(
             text = label,
             fontSize = 12.sp,
+            fontWeight = FontWeight.Medium,
             lineHeight = 18.sp,
             color = Color(0xFFC4C4C4),
             textAlign = TextAlign.Center
@@ -30,6 +32,7 @@ fun MoreDetailsColumn(modifier: Modifier = Modifier, label: String, value: Strin
         Text(
             text = value,
             fontSize = 15.sp,
+            fontWeight = FontWeight.Medium,
             lineHeight = 22.5.sp,
             color = Color(0xFF9A9A9A),
             textAlign = TextAlign.Center

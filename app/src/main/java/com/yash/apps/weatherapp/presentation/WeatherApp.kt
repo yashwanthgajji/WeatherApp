@@ -13,7 +13,7 @@ import com.yash.apps.weatherapp.presentation.home.HomeViewModel
 fun WeatherApp(modifier: Modifier = Modifier) {
     val viewModel: HomeViewModel = hiltViewModel()
     HomeScreen(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(start = 16.dp, top = 80.dp, end = 16.dp),
         viewModel = viewModel
