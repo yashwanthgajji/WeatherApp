@@ -77,6 +77,8 @@ dependencies {
     implementation (libs.androidx.datastore.preferences)
     //Accompanist
     implementation(libs.accompanist.systemuicontroller)
+    //Coil
+    implementation("io.coil-kt:coil-compose:2.4.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
