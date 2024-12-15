@@ -75,6 +75,8 @@ dependencies {
     implementation(libs.converter.gson)
     //Datastore
     implementation (libs.androidx.datastore.preferences)
+    //Accompanist
+    implementation(libs.accompanist.systemuicontroller)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
