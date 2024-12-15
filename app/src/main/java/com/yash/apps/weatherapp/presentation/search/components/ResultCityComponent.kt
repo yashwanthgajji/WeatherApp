@@ -40,9 +40,9 @@ fun ResultCityComponent(
         modifier = modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(16.dp))
+            .clickable { onClick() }
             .background(Color(0xFFF2F2F2))
-            .padding(16.dp)
-            .clickable { onClick() },
+            .padding(16.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {

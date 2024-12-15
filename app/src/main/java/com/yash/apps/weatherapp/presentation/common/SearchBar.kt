@@ -1,6 +1,8 @@
 package com.yash.apps.weatherapp.presentation.common
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -13,6 +15,8 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -29,9 +33,20 @@ import com.yash.apps.weatherapp.ui.theme.WeatherAppTheme
 fun SearchBar(
     modifier: Modifier = Modifier,
     searchValue: String,
+    readOnly: Boolean = false,
+    onClick: (() -> Unit)? = null,
     onEditText: (String) -> Unit,
     onSearch: () -> Unit
 ) {
+    val interactionSource = remember {
+        MutableInteractionSource()
+    }
+    val isClicked = interactionSource.collectIsPressedAsState().value
+    LaunchedEffect(key1 = isClicked) {
+        if (isClicked) {
+            onClick?.invoke()
+        }
+    }
     TextField(
         modifier = modifier
             .fillMaxWidth()
@@ -40,6 +55,7 @@ fun SearchBar(
             .background(color = Color(0xFFF2F2F2)),
         value = searchValue,
         onValueChange = onEditText,
+        readOnly = readOnly,
         placeholder = {
             Text(
                 text = "Search Location",
@@ -67,7 +83,8 @@ fun SearchBar(
         ),
         keyboardActions = KeyboardActions(
             onSearch = { onSearch() }
-        )
+        ),
+        interactionSource = interactionSource
     )
 }
 
