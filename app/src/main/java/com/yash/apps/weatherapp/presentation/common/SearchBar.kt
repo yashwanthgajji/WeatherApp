@@ -12,6 +12,7 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -59,15 +60,10 @@ fun SearchBar(
         placeholder = {
             Text(
                 text = "Search Location",
-                fontSize = 15.sp,
-                lineHeight = 22.5.sp,
-                color = Color(0xFFC4C4C4)
+                style = MaterialTheme.typography.bodyMedium.copy(color = Color(0xFFC4C4C4))
             )
         },
-        textStyle = TextStyle(
-            fontSize = 15.sp,
-            lineHeight = 22.5.sp,
-        ),
+        textStyle = MaterialTheme.typography.bodyMedium,
         trailingIcon = {
             IconButton(onClick = onSearch) {
                 Icon(

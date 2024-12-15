@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -52,16 +53,13 @@ fun ResultCityComponent(
         ) {
             Text(
                 text = location,
-                fontSize = 20.sp,
-                lineHeight = 30.sp,
-                textAlign = TextAlign.Center,
-                fontWeight = FontWeight.SemiBold
+                style = MaterialTheme.typography.headlineSmall
             )
             Row(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalAlignment = Alignment.Top
             ) {
-                Text(text = temperature, fontSize = 60.sp, fontWeight = FontWeight.Medium)
+                Text(text = temperature, style = MaterialTheme.typography.bodyLarge)
                 Box(modifier = Modifier
                     .size(5.dp)
                     .border(width = 1.dp, color = Color.Black, shape = CircleShape)
