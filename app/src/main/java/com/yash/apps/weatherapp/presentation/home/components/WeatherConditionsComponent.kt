@@ -29,7 +29,7 @@ fun WeatherConditionsComponent(
             modifier = Modifier.size(123.dp),
             model = conditionIcon,
             contentDescription = condition,
-            contentScale = ContentScale.Crop
+            contentScale = ContentScale.Fit
         )
         LocationComponent(location = location)
         TemperatureDisplay(temperature = temperature)

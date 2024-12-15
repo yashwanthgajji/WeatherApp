@@ -22,7 +22,6 @@ fun TemperatureDisplay(modifier: Modifier = Modifier, temperature: String) {
         Text(
             text = temperature,
             fontSize = 70.sp,
-            lineHeight = 105.sp,
             textAlign = TextAlign.Center
         )
         Box(modifier = Modifier
