@@ -1,6 +1,8 @@
 package com.yash.apps.weatherapp.di
 
 import com.yash.apps.weatherapp.data.remote.WeatherApi
+import com.yash.apps.weatherapp.data.repository.WeatherRepositoryImpl
+import com.yash.apps.weatherapp.domain.repository.WeatherRepository
 import com.yash.apps.weatherapp.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -21,5 +23,11 @@ object AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(WeatherApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideWeatherRepository(weatherApi: WeatherApi): WeatherRepository {
+        return WeatherRepositoryImpl(weatherApi = weatherApi)
     }
 }
