@@ -8,6 +8,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.yash.apps.weatherapp.presentation.home.HomeScreen
 import com.yash.apps.weatherapp.presentation.home.HomeViewModel
+import com.yash.apps.weatherapp.presentation.search.SearchScreen
+import com.yash.apps.weatherapp.presentation.search.components.SearchViewModel
 
 @Composable
 fun WeatherApp(modifier: Modifier = Modifier) {
@@ -18,4 +20,9 @@ fun WeatherApp(modifier: Modifier = Modifier) {
             .padding(start = 16.dp, top = 80.dp, end = 16.dp),
         viewModel = viewModel
     )
+//    val viewModel: SearchViewModel = hiltViewModel()
+//    SearchScreen(
+//        viewModel = viewModel,
+//        navigateBack = {}
+//    )
 }

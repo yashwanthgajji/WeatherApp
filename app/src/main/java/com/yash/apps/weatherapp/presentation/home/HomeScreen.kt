@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.yash.apps.weatherapp.presentation.home.components.MoreDetailsSection
 import com.yash.apps.weatherapp.presentation.home.components.NoCityComponent
 import com.yash.apps.weatherapp.presentation.home.components.WeatherConditionsComponent
+import com.yash.apps.weatherapp.util.HelperFunctions.getTemperatureString
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier, viewModel: HomeViewModel) {
@@ -57,13 +58,5 @@ fun HomeScreen(modifier: Modifier = Modifier, viewModel: HomeViewModel) {
 
             }
         }
-    }
-}
-
-fun getTemperatureString(value: Double): String {
-    return if (value % 1.0 == 0.0) {
-        value.toInt().toString()
-    } else {
-        value.toString()
     }
 }

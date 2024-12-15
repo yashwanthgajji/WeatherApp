@@ -27,7 +27,7 @@ fun LocationComponent(modifier: Modifier = Modifier, location: String) {
         Text(
             text = location,
             fontSize = 30.sp,
-            fontWeight = FontWeight.Bold,
+            fontWeight = FontWeight.SemiBold,
             textAlign = TextAlign.Center
         )
         Icon(
